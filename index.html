@@ -3,18 +3,19 @@
 <head>
     <!-- Google Tag Manager -->
     <script>
-        function captureUserDetails() {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({
-                    'event': 'userDetailsCaptured',
-                    'username': 'pawanmehra', // Replace 'JohnDoe' with your dynamic username variable
-                    'latitude': position.coords.latitude,
-                    'longitude': position.coords.longitude
-                });
-            });
-        }
-    
+navigator.geolocation.getCurrentPosition(function(position) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'event': 'userDetailsCaptured',
+        'username': 'JohnDoe', // Replace with your dynamic username variable
+        'latitude': position.coords.latitude,
+        'longitude': position.coords.longitude
+    });
+    console.log(position);
+}, function(error) {
+    console.error('Error retrieving geolocation:', error);
+});
+
 
     
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
